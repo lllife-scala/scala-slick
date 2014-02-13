@@ -1,21 +1,12 @@
 package controllers
 
-import play.api.mvc._
-import models.Entity
-import models.Entity.Result
-import play.api.mvc.Result
+import  play.api.mvc._
 
-object Application extends Controller {
-
-  def index = Action {
-
-    val entity = new Entity.DBUtils()
-    val rs= entity.getReferenceById("2")
-
-    entity.updateReferenceById(rs.data)
-
-    val jsonString = rs.toJson()
-
-    Ok(jsonString)
+/**
+ * Created by recovery on 2/11/14.
+ */
+object Application  extends  Controller{
+  def index() = Action {
+    Ok("I'm ok")
   }
 }

@@ -7,3 +7,11 @@ GET     /                           controllers.Application.index
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+# My Restful service...
+POST        /reference              controllers.Bupa.updateReferenceInfo
+POST        /images                 controllers.Bupa.insertImageInfos
+
+GET         /login/:user/:password  controllers.Bupa.login(user: String, password: String)
+GET         /reference/:id          controllers.Bupa.getRefernceInfo(id: String)

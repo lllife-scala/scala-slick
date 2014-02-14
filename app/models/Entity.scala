@@ -43,6 +43,7 @@ object Entity {
   var imageInfos = TableQuery[ImageInfos]
   var userInfos = TableQuery[UserInfos]
 
+  // -------------------------------------------------------------------------------
   // Manaul serialize
   // * sucess : String
   // * message : String
@@ -67,6 +68,7 @@ object Entity {
     }
   }
 
+  // ---------------------------------------------------------------------------------
   // Reference Definition
   // MySql persistance object
   // * reference
@@ -121,6 +123,7 @@ object Entity {
       (reference, page, scanDate, scanUser, status) <>(ReferenceInfo.tupled, ReferenceInfo.unapply)
   }
 
+  // -----------------------------------------------------------------------------------------------
   // Image information define as case class.
   // * id
   // * path
@@ -168,6 +171,7 @@ object Entity {
       (id, reference, path, documentTitle, createDate, isDelete, page) <>(ImageInfo.tupled, ImageInfo.unapply)
   }
 
+  // ----------------------------------------------------------------------------------------------------
   // User property...
   case class UserInfo(user: String, password: String) {
     def this() = this("", "")
@@ -183,6 +187,7 @@ object Entity {
   }
 
 
+  // ----------------------------------------------------------------------------------------------------
   // Utility class for manage DB.
   // * ReferenceInfo
   // * ImageInfo
@@ -232,7 +237,8 @@ object Entity {
       Database.forURL(url, driver = driver, user = user, password = password).withSession {
         implicit session: Session =>
 
-          val scanDate = new java.sql.Date(Calendar.getInstance().getTime().getTime())
+          val current = new java.util.Date()
+          val scanDate = new java.sql.Date(current.getTime())
 
           def findById(id: String) = for {
             c <- referenceInfos if c.reference === id
@@ -256,5 +262,4 @@ object Entity {
       }
     }
   }
-
 }

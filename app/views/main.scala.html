@@ -4,12 +4,36 @@
 
 <html>
     <head>
+
         <title>@title</title>
+
+        <!--
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("venders/angular/angular.js") type="text/javascript")></script>
+        -->
+
+        <link rel="stylesheet" href="assets/stylesheets/main.css"/>
+        <link rel="shortcut" href="assets/images/favicon.png"/>
+        <link rel="stylesheet" href="assets/venders/semantic-ui/css/semantic.css"/>
+
+        <!-- [ default ] -->
+        <script src="assets/javascripts/jquery-1.9.0.min.js"></script>
+
+        <!-- [ vender dependencies ]
+        * angular
+        * semantic-ui
+        -->
+
+        <script src="assets/venders/angular/angular.js"></script>
+        <script src="assets/venders/semantic-ui/javascript/semantic.js"></script>
+        <script src="assets/javascripts/main.js"></script>
+        <script src="assets/javascripts/controllers/scan_controller.js"></script>
+
     </head>
-    <body>
+    <body ng-app="BupaApplication">
         @content
     </body>
 </html>

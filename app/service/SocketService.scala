@@ -8,7 +8,7 @@ import play.api.Play
 
 object SocketService {
 
-  // Model variable
+  // Module variable
   // * service.socket.uri from conf/application.cinf
   // * draf_76 from user manual
   // * default play logger

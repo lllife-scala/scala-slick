@@ -1,8 +1,47 @@
 @()
 @main("Scan") {
 
-<div ng-controller="ScanController">
-    <div class="ui segment">
+<div ng-controller="scanController">
+    <div class="">
+
+        <table class="ui table segment">
+            <thread>
+                <tr ng-if="false">
+                    <th>xx</th>
+                    <th>zz</th>
+                </tr>
+            </thread>
+            <tbody>
+
+            <tr ng-repeat="scan in scans | reverse" class="animated fadeIn">
+                <td>
+                    <div class="ui mini circular images animated fadeInLeft">
+                        <img ng-src="/assets/images/users/user.jpg" alt=""/>
+                    </div>
+                </td>
+                <td>{{scan.data.scanUser}}</td>
+                <td>{{scan.data.scanDate | date: 'medium' }}</td>
+                <td>
+                    <span class="ui small button" ng-class="{ green : scan.success, red : !scan.success}">
+                        {{scan.data.reference}}
+                    </span>
+                </td>
+                <td style="width:50%">
+                    <div class="chart animated fadeInLeft">
+                        <div style="width:{{scan.data.page * 5}}px">
+                                <span class="animated rotateIn">
+                                    <!--<i class="ui icon photo"></i>-->
+                                    {{scan.data.page}}
+                                </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
     </div>
 </div>
 

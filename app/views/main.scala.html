@@ -1,6 +1,6 @@
 @(title: String)(content: Html)
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 
 <html>
     <head>
@@ -16,6 +16,7 @@
         -->
 
         <link rel="stylesheet" href="assets/stylesheets/main.css"/>
+        <link rel="stylesheet" href="assets/stylesheets/animate.css"/>
         <link rel="shortcut" href="assets/images/favicon.png"/>
         <link rel="stylesheet" href="assets/venders/semantic-ui/css/semantic.css"/>
 
@@ -32,8 +33,11 @@
         <script src="assets/javascripts/main.js"></script>
         <script src="assets/javascripts/controllers/scan_controller.js"></script>
 
+
+        <script src="assets/venders/angular-animate/angular-animate.js"></script>
+
     </head>
-    <body ng-app="BupaApplication">
+    <body ng-app="bupaApplication">
         @content
     </body>
 </html>

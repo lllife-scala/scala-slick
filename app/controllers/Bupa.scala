@@ -63,7 +63,9 @@ object Bupa extends Controller {
 
         // Broadcase message
         // For realtime monitor...
-        SocketService.send("{Hello world}")
+        //SocketService.send("{Hello world}")
+        SocketService.send(status)
+
 
         // Return json message
         // With status Ok

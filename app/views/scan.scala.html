@@ -15,7 +15,7 @@
 
             <tr ng-repeat="scan in scans | reverse" class="animated fadeIn">
                 <td>
-                    <div class="ui mini circular images animated fadeInLeft">
+                    <div class="ui mini circular images animated bounceIn">
                         <img ng-src="/assets/images/users/user.jpg" alt=""/>
                     </div>
                 </td>
@@ -27,7 +27,7 @@
                     </span>
                 </td>
                 <td style="width:50%">
-                    <div class="chart animated fadeInLeft">
+                    <div class="chart animated fadeInLeft" ng-if="scan.data.page > 0">
                         <div style="width:{{scan.data.page * 5}}px">
                                 <span class="animated rotateIn">
                                     <!--<i class="ui icon photo"></i>-->
